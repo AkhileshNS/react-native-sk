@@ -32,7 +32,6 @@ target 'reactNativeSk' do
 
   pod 'ReactNativeExceptionHandler', :path => '../node_modules/react-native-exception-handler'
 
-  pod 'react-native-config', :path => '../node_modules/react-native-config'
 
   target 'reactNativeSkTests' do
     inherit! :search_paths
