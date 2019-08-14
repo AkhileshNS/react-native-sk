@@ -44,7 +44,8 @@
     "jest-enzyme": "^7.1.0",
     "metro-react-native-babel-preset": "0.54.1",
     "react-dom": "^16.9.0",
-    "react-test-renderer": "16.8.6"
+    "react-test-renderer": "16.8.6",
+    "ws": "^7.1.2"
   },
   "jest": {
     "preset": "react-native",
