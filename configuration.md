@@ -25,6 +25,6 @@
 
 - [x] TESTING (Unit, Integration and Component) - Jest & Enzyme
 
-- [ ] TESTING (End-to-End) - Detox?
+- [ ] TESTING (End-to-End) - Detox? NOT AVAILABLE IN WINDOWS
 
 # Relevant Paths
