@@ -28,3 +28,9 @@
 - [ ] TESTING (End-to-End) - Detox? NOT AVAILABLE IN WINDOWS
 
 # Relevant Paths
+
+- /src/App
+
+- /src/ScreenName
+
+- /src/global
