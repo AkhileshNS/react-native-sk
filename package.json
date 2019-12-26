@@ -10,8 +10,20 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@emotion/native": "^10.0.27",
+    "immer": "^5.1.0",
+    "lodash": "^4.17.15",
+    "native-base": "^2.13.8",
     "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native": "0.61.5",
+    "react-native-gesture-handler": "^1.5.2",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "^2.0.0-alpha.22",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
+    "unstated-next": "^1.1.0",
+    "use-immer": "^0.3.5"
   },
   "devDependencies": {
     "@babel/core": "7.7.7",

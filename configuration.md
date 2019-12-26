@@ -1,16 +1,27 @@
+# Dependencies
+
+- NodeJS v12.8.1 (newer versions are giving some problems)
+  `choco install nodejs --version=12.8.1 -y`
+
+- Android Studio
+  `choco install androidstudio -y`
+
+- adb
+  `choco install adb -y`
+
 # Libraries
 
-- [ ] ROUTING - react-navigation
+- [x] ROUTING - react-navigation
 
-- [ ] STYLING - @emotion/core & @emotion/native
+- [x] STYLING - nativebase, @emotion/core and @emotion/native
 
 - [x] TYPE SAFETY - TypeScript
 
-- [ ] IMMUTABILITY - immer & use-immer
+- [x] IMMUTABILITY - immer & use-immer
 
-- [ ] STATE MANAGEMENT - unstated-next
+- [x] STATE MANAGEMENT - unstated-next
 
-- [ ] CONVENIENCE - lodash
+- [x] CONVENIENCE - lodash
 
 - [x] TESTING (Unit, Integration and Component) - Jest & Enzyme
 
