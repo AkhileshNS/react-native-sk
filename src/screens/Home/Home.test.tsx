@@ -8,7 +8,12 @@ describe('<Home />', () => {
     let wrapper: ShallowWrapper;
     beforeEach(() => {
       wrapper = shallow(
-        <Home counter={0} increment={() => {}} decrement={() => {}} />,
+        <Home
+          screen={null}
+          counter={0}
+          increment={() => {}}
+          decrement={() => {}}
+        />,
       );
     });
 

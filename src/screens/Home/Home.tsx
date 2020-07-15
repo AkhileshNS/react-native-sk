@@ -5,7 +5,7 @@ import {HomeProps} from 'src/App/App.types';
 import styles from './Home.styles';
 
 interface IProps {
-  screen: HomeProps;
+  screen: HomeProps | null; // null for testing
   counter: number;
   increment: () => void;
   decrement: () => void;
