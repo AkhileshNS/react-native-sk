@@ -8,7 +8,10 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "add": "node scripts/add"
+    "add": "node scripts/add",
+    "sync": "node scripts/sync",
+    "remove": "node scripts/remove",
+    "change": "node scripts/change"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",

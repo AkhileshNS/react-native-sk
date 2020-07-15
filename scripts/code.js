@@ -1,8 +1,4 @@
 const Type = (name) => `
-type RootStackParamList = {
-  ${name}: undefined;
-};
-
 type ${name}RouteProp = RouteProp<RootStackParamList, '${name}'>;
 type ${name}NavigationProp = StackNavigationProp<RootStackParamList, '${name}'>;
 export interface ${name}Props {
@@ -14,6 +10,10 @@ export interface ${name}Props {
 const Types = (dirs) => `
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
+
+type RootStackParamList = {
+  ${dirs.map((dir) => dir + ': undefined').join(';')};
+};
 
 ${dirs.map((dir) => Type(dir)).join('\n')}
 `;
@@ -29,7 +29,7 @@ export default [
 const Screen = (name) => `
 import React from 'react';
 import {View, Text} from 'react-native';
-import {${name}Props} from 'src/App/App.types';
+import {${name}Props} from 'src/screens/types.tsx';
 import styles from './${name}.styles';
 // import Store from 'src/App/App.store';
 

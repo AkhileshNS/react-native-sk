@@ -10,7 +10,7 @@ const App = () => (
   <Store.Provider>
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="Demo"
         screenOptions={{headerShown: false}}>
         {screens.map((screen, i) => (
           <Stack.Screen {...screen} key={'Screen ' + i} />

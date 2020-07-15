@@ -2,11 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const gen = require('./code');
+const sync = require('./sync');
 
 const mkdir = util.promisify(fs.mkdir);
 const writeFile = util.promisify(fs.writeFile);
 
-(async () => {
+const add = async () => {
   try {
     if (process.argv[2] === 'screen') {
       const name = process.argv[3];
@@ -25,23 +26,12 @@ const writeFile = util.promisify(fs.writeFile);
         gen.Test(name),
       );
 
-      const getDirectories = (source) =>
-        fs
-          .readdirSync(source, {withFileTypes: true})
-          .filter((dirent) => dirent.isDirectory())
-          .map((dirent) => dirent.name);
-
-      const dirs = getDirectories(path.join(process.cwd(), 'src/screens'));
-      await writeFile(
-        path.join(process.cwd(), 'src/screens/index.tsx'),
-        gen.Screens(dirs),
-      );
-      await writeFile(
-        path.join(process.cwd(), 'src/screens/types.tsx'),
-        gen.Types(dirs),
-      );
+      await sync(true);
     }
   } catch (err) {
     console.log(err);
   }
-})();
+};
+
+add();
+module.exports = add;
