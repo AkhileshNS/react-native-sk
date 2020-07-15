@@ -19,3 +19,17 @@ This is my personal React Native Starter Kit
 7. **Crash Proofing**: React Native Exception Handler
 
 8. **Icons**: React Native Vector Icons
+
+## Commands
+
+- **npm run add/remove screen (NAME)** -
+  Use this command to either add or remove a screen in the project
+
+- **npm run change screen (OLDNAME) (NEWNAME)** -
+  Use this command to change an old screen name to a new one
+
+- **npm run add/remove component (NAME)** -
+  Use this command to either add or remove a component in the project
+
+- **npm run change component (OLDNAME) (NEWNAME)** -
+  Use this command to change an old component name to a new one
