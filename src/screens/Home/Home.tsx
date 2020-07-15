@@ -8,7 +8,7 @@ interface IProps {
   decrement: () => void;
 }
 
-const Home: React.FC<IProps> = (props) => {
+export const Home: React.FC<IProps> = (props) => {
   return (
     <View>
       <Button title="increment" onPress={props.increment} />
