@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {Store} from 'src/App/App.store';
-import {HomeProps} from 'src/App/App.types';
+import {HomeProps} from 'src/screens/types';
 import styles from './Home.styles';
 
 interface IProps {

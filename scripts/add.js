@@ -36,6 +36,10 @@ const writeFile = util.promisify(fs.writeFile);
         path.join(process.cwd(), 'src/screens/index.tsx'),
         gen.Screens(dirs),
       );
+      await writeFile(
+        path.join(process.cwd(), 'src/screens/types.tsx'),
+        gen.Types(dirs),
+      );
     }
   } catch (err) {
     console.log(err);

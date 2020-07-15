@@ -1,8 +1,28 @@
+const Type = (name) => `
+type RootStackParamList = {
+  ${name}: undefined;
+};
+
+type ${name}RouteProp = RouteProp<RootStackParamList, '${name}'>;
+type ${name}NavigationProp = StackNavigationProp<RootStackParamList, '${name}'>;
+export interface ${name}Props {
+  route: ${name}RouteProp;
+  navigation: ${name}NavigationProp;
+}
+`;
+
+const Types = (dirs) => `
+import {RouteProp} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+
+${dirs.map((dir) => Type(dir)).join('\n')}
+`;
+
 const Screens = (dirs) => `
-${dirs.map((dir) => `import ${dir} from './${dir}/${dir}';\n`)}
+${dirs.map((dir) => `import ${dir} from './${dir}/${dir}'`).join(';\n')}
 
 export default [
-  ${dirs.map((dir) => `{name: '${dir}', component: ${dir}},\n`)}
+  ${dirs.map((dir) => `{name: '${dir}', component: ${dir}}`).join(',\n')}
 ]
 `;
 
@@ -77,4 +97,5 @@ module.exports = {
   Screen,
   Test,
   Styles,
+  Types,
 };
