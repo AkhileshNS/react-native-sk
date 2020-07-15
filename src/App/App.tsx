@@ -1,24 +1,23 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import 'src/App/App.error';
+import screens from 'src/screens';
 import {Store} from 'src/App/App.store';
 
-const App = () => {
-  const store = Store.useContainer();
+const Stack = createStackNavigator();
 
-  return (
-    <View>
-      <Button title="increment" onPress={store.increment} />
-      <Text>Count: {store.counter}</Text>
-      <Button title="decrement" onPress={store.decrement} />
-    </View>
-  );
-};
-
-const AppWithStore = () => (
+const App = () => (
   <Store.Provider>
-    <App />
+    <NavigationContainer>
+      <Stack.Navigator>
+        {screens.map((screen, i) => (
+          <Stack.Screen {...screen} key={'Screen ' + i} />
+        ))}
+      </Stack.Navigator>
+    </NavigationContainer>
   </Store.Provider>
 );
 
-export default AppWithStore;
+export default App;

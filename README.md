@@ -17,3 +17,5 @@ This is my personal React Native Starter Kit
 6. **UI**: React Native Paper
 
 7. **Crash Proofing**: React Native Exception Handler
+
+8. **Icons**: React Native Vector Icons
