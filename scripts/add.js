@@ -12,7 +12,14 @@ const add = async () => {
     if (process.argv[2] === 'screen') {
       const name = process.argv[3];
 
-      await mkdir(path.join(process.cwd(), 'src/screens/' + name));
+      if (!fs.existsSync(path.join(process.cwd(), 'src/screens'))) {
+        await mkdir(path.join(process.cwd(), 'src/screens'));
+      }
+
+      if (!fs.existsSync(path.join(process.cwd(), 'src/screens/' + name))) {
+        await mkdir(path.join(process.cwd(), 'src/screens/' + name));
+      }
+
       await writeFile(
         path.join(process.cwd(), `src/screens/${name}/${name}.tsx`),
         gen.Screen(name),
@@ -27,6 +34,30 @@ const add = async () => {
       );
 
       await sync(true);
+    }
+    if (process.argv[2] === 'component') {
+      const name = process.argv[3];
+
+      if (!fs.existsSync(path.join(process.cwd(), 'src/components'))) {
+        await mkdir(path.join(process.cwd(), 'src/components'));
+      }
+
+      if (!fs.existsSync(path.join(process.cwd(), 'src/components/' + name))) {
+        await mkdir(path.join(process.cwd(), 'src/components/' + name));
+      }
+
+      await writeFile(
+        path.join(process.cwd(), `src/components/${name}/${name}.tsx`),
+        gen.Component(name),
+      );
+      await writeFile(
+        path.join(process.cwd(), `src/components/${name}/${name}.styles.tsx`),
+        gen.Styles(),
+      );
+      await writeFile(
+        path.join(process.cwd(), `src/components/${name}/${name}.test.tsx`),
+        gen.Test(name, true),
+      );
     }
   } catch (err) {
     console.log(err);

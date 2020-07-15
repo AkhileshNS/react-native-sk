@@ -19,11 +19,14 @@ const deleteFolderRecursive = function (Path) {
 };
 
 const remove = async () => {
-  if (process.argv[2] === 'screen') {
-    const name = process.argv[3];
+  const name = process.argv[3];
 
+  if (process.argv[2] === 'screen') {
     deleteFolderRecursive(path.join(process.cwd(), 'src/screens/' + name));
     await sync(true);
+  }
+  if (process.argv[2] === 'component') {
+    deleteFolderRecursive(path.join(process.cwd(), 'src/components/' + name));
   }
 };
 

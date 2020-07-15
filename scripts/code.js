@@ -1,3 +1,26 @@
+const Component = (name) => `
+import React from 'react';
+import {View, Text} from 'react-native';
+import styles from './${name}.styles';
+// import Store from 'src/App/App.store';
+
+interface IProps {}
+
+export const ${name}: React.FC<IProps> = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>${name}</Text>
+    </View>
+  );
+};
+
+export default () => {
+  // const store = Store.useContainer();
+
+  return <${name}  />;
+};
+`;
+
 const Type = (name) => `
 type ${name}RouteProp = RouteProp<RootStackParamList, '${name}'>;
 type ${name}NavigationProp = StackNavigationProp<RootStackParamList, '${name}'>;
@@ -70,7 +93,7 @@ export default StyleSheet.create({
 });
 `;
 
-const Test = (name) => `
+const Test = (name, isComponent) => `
 import {${name}} from './${name}';
 import {shallow, ShallowWrapper} from 'enzyme';
 import React from 'react';
@@ -81,7 +104,7 @@ describe('<${name} />', () => {
     let wrapper: ShallowWrapper;
     beforeEach(() => {
       wrapper = shallow(
-        <${name} screen={null} />
+        <${name} ${isComponent ? '' : 'screen={null}'} />
       );
     });
 
@@ -93,6 +116,7 @@ describe('<${name} />', () => {
 `;
 
 module.exports = {
+  Component,
   Screens,
   Screen,
   Test,
